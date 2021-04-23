@@ -1,0 +1,494 @@
+/* Reset CSS */
+
+* {
+    /* Emmet */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Shift + Alt + A */
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* 
+    1. Từ ngoài vào trong
+    2. Từ trên xuống dưới
+    3. Tổng quan đến chi tiết
+*/
+
+/*  Luôn luôn hỏi khi css cho 1 element nào đó
+    1. Vị trí
+    2. Kích thước (width, height)
+    3. Màu sắc
+    4. Kiểu dáng (kieu chu, hinh tron, vuong, ...)
+*/
+
+/* important để ưu tiên nhất, trong trường hợp tạo các class riêng lẻ */
+
+/* Common */
+
+.text-center {
+    text-align: center !important;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;   
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-third {
+    width: 33.3333%;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+.mt-32 {
+    margin-top: 32px !important;
+}
+
+
+.text-white {
+    color: #fff !important;
+}
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: 0.8px solid #000 ;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none; /* webkit này là dành riêng cho safari */
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+}
+
+.pull-right {
+    float: right !important;
+}
+/* Main */
+#main {
+
+}
+
+#header {
+    position: fixed; /* giup phan tu luon co dinh khi ta scroll trinh duyet */
+    height: 46px;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    
+}
+
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
+#header .search-btn {
+    float: right;
+    padding: 0 21px;
+}
+
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-icon,
+#header .search-icon { 
+    font-size: 20px;
+    color: white;
+    line-height: 46px;
+}
+
+#nav, .subnav {
+    list-style-type: none;
+}
+
+#nav {
+    display: inline-block;
+}
+
+/* #nav > li > a {
+    color: white;
+} */
+#nav > li {
+    display: inline-block; /* inline: tren mot hang - block: giu lai tinh chat khoi de chung ta co the dat lai kich thuoc */    
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav > li > a {
+    color: white;
+    text-transform: uppercase;
+}
+
+#nav .subnav {
+    position: absolute;
+    display: none; 
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+}
+
+#nav .subnav a {
+    color: black;
+    padding: 0 12px;
+    line-height: 38px;
+    
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+
+#nav li a {
+    color: #fff;
+    text-decoration: none; /* Bỏ gạch chân */
+    line-height: 46px;
+    padding: 0 24px;
+    display: block;
+    
+}
+
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
+
+#nav .subnav li:hover,
+#nav > li:hover > a { /* Chỉ ảnh hưởng thằng cấp 1 thôi là nav */
+    color: #000;
+    background-color: #ccc;
+}
+
+
+
+#slider {
+    position: relative;
+    min-height: 500px;
+    background-color: white;
+    margin-top: 46px;
+    padding-top: 50%; /* 50% chính là 50% chiều ngang của chính nó */
+    background: url('/assets/img/slider/chicago.jpg') top center / cover no-repeat;
+}
+
+
+#slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    color: #fff;
+    left: 50%;  /* kỹ thuật căn giữa */
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#slider .text-heading {
+    font-weight: 500; /* độ dày chữ */
+    font-size: 24px;
+}
+
+#slider .text-description {
+    font-size: 15px;
+    margin-top: 25px;
+    text-shadow: 0 0 1px #000;
+}
+
+#content {
+    /* height: 1000px;
+    background: gray; */
+}
+
+#content .content-section {
+    width: 800px;
+    max-width: 100%;
+    padding: 64px 0 112px; /* 112=64+48 */
+    margin-left: auto; /* đẩy sang trái đẩy sang phải để tự động căn giữa */
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* đổi chỗ thuộc tính dùng ALT */
+#content .section-heading {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+#content .section-sub-heading {
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 25px;
+    opacity: 0.6; /* làm độ trong suốt cho mờ đi ~ 60% */
+}
+
+#content .about-text {
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: justify;
+    line-height: 1.4; /* chỉnh độ cao của một dòng 1.4= tiếng Anh, 1.6 = tiếng Việt */
+}
+
+/* Vấn đề khi sử dụng float:
+=> Nếu mà tất cả các thẻ con bên trong thẻ cha đều sử dụng float thì thẻ cha sẽ co lại, sẽ chui ra mặt phẳng khác
+=> Cách khắc phục: overflow: hidden;
+*/
+
+#content .member-list {
+    margin-top: 32px;
+    overflow: hidden;
+}
+
+
+#content .member-name {
+    font-size: 15px;
+}
+
+#content .member-img {
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 4px; /* Bo góc ảnh */
+}
+
+/* Để khắc phục tình trạng bị rịch của member-list thì dùng 1 thẻ div tên clear */
+#content .clear {
+    clear: both;
+}
+
+/* Nguyên tắc đổ màu nền là chúng ta chỉ đổ được padding và content thôi còn margin thì không */
+
+/* Tour section */
+
+.tour-section {
+    background-color: #000;
+}
+
+.tickets-list {
+    background-color: #fff;
+    margin-top: 40px;
+    list-style: none;
+}
+
+.tickets-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+
+.tickets-list .sold-out {
+    background-color: #f44336;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity {
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    border-radius: 50%; /* Hình tròn */
+    text-align: center;
+    color: #fff;
+    line-height: 24px; /* Căn giữa từ trên xuống dưới thì đặt line-height = chiều cao của nó */
+    margin-top: -3px;
+}
+
+/* Places */
+
+.place-list{
+    /* margin-top: 32px;
+    margin-left: -8px;
+    margin-right: -8px; */
+    margin-top: 16px;
+/*     margin-bottom: 48px; */
+   /*  padding-bottom: 48px; */
+}
+
+
+.place-img {
+    width: 100%; /* Bằng 100% độ rộng của thẻ chứa nó ở đây là thẻ place-item, để tránh tình trạng hình to hơn thẻ chứa nó nên bị tràn */
+    display: block;
+}
+
+.place-img:hover{
+    opacity: 0.7;
+}
+
+.place-body {
+    padding: 16px;
+    background-color: #fff;
+    font-size: 15px;
+}
+
+.place-heading {
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.place-time {
+    margin-top: 15px;
+    color: #757575;
+}
+
+.place-desc {
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+
+/* Contact form */
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info a {
+    color: rgb(170, 15, 49);
+    opacity: 0.7;
+}
+
+.contact-info a:hover {
+    opacity: 1;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form {
+    font-size: 15px;
+
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    color: #555;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Kỹ thuật vừa bo tròn form input vừa click vào đổi màu
+    border-radius: 4px;
+    outline: none;
+:focus
+    border: 2px solid salmon;
+*/
+
+.contact-form .form-control:focus {
+    border: 2px solid salmon;
+}
+
+
+/* Map section */
+.map-section img {
+    width: 100%;
+}
+
+
+/* Footer section */
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .socials-list {
+    font-size: 24px;
+}
+
+#footer .socials-list a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;    
+}
+
+#footer .copyright a:hover,
+#footer .socials-list a:hover {
+    color: rgba(0, 0, 0, 0.4);
+
+}
+
+#footer .copyright {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#footer .copyright a {
+    color: rgba(0, 0, 0, 0.7);   
+}
+
+/* 
+    PC: >= 1024px
+    Tablet: 740px<= x < 1024px
+    Mobile: < 740px
+*/
+
+/* 
+    thuộc tính overflow:hidden 
+    => bất cứ 1 thẻ con nào của thẻ cha mà chui ra thì nó sẽ tác dụng lên thằng con đó
+*/
